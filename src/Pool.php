@@ -28,7 +28,7 @@ class Pool extends AbstractConnectionPool
         parent::__construct($config, $loop);
     }
 
-    protected function createConnection()
+    protected function createConnection($params = null)
     {
         return new RedisClient($this->url, $this->connector, $this->loop);
     }
